@@ -19,7 +19,6 @@ Este projeto implementa um sistema de comércio eletrônico com foco em padrões
 
 ### Padrões Utilizados
 - **Observer**: Utilizado para notificar o `AgenteLogistico` sobre mudanças no estado da compra. Garante que o agente logístico seja informado sobre confirmações ou cancelamentos de compras.
-- **Single Responsibility Principle**: Utilizado para garantir que cada classe tenha uma única responsabilidade. Por exemplo, a classe `AgenteLogistico` é responsável por gerenciar a logística da compra, enquanto a classe `Compra` é responsável por armazenar os dados da compra.
 
 ## Diagrama de Classes do Sistema
 ![Diagrama de Classes](src/diagrama.png)
