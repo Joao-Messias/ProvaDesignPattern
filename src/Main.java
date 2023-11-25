@@ -26,7 +26,9 @@ public class Main {
         loja.finalizarCompra();
 
         // Para testar o cancelamento, você pode descomentar a linha abaixo
-         loja.cancelarCompra();
+        loja.cancelarCompra();
 
+        // status da compra
+        System.out.println("Status da compra: " + loja.getStatusCompra());
     }
 }

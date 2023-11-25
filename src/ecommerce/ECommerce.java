@@ -41,6 +41,10 @@ public class ECommerce {
         notifyAllObservers(detalhes);
     }
 
+    public String getStatusCompra() {
+        return this.statusCompra;
+    }
+
     private void notifyAllObservers(String detalhes) {
         for (Observer observer : observers) {
             observer.update(statusCompra, detalhes);
