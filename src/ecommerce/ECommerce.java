@@ -14,7 +14,16 @@ public class ECommerce {
     private List<Observer> observers = new ArrayList<>();
     private String statusCompra;
 
-    public ECommerce(Pagamento metodoDePagamento) {
+    private static ECommerce instancia;
+
+    public static ECommerce getInstance(Pagamento metodoDePagamento) {
+        if (instancia == null) {
+            instancia = new ECommerce(metodoDePagamento);
+        }
+        return instancia;
+    }
+
+    private ECommerce(Pagamento metodoDePagamento) {
         this.gerenciadorDePagamento = new GerenciadorDePagamento(metodoDePagamento);
         this.gerenciadorDeCarrinho = new GerenciadorDeCarrinho();
     }

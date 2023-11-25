@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         // criação do método de pagamento
         Pagamento pagamentoPix = new PagamentoPix();
-        // instanciação do Ecommerce com o método de pagamento
-        ECommerce loja = new ECommerce(pagamentoPix);
+        // instanciação do Ecommerce com o método de pagamento criado
+        ECommerce loja = ECommerce.getInstance(pagamentoPix);
 
         // Adicionando o Agente Logístico como um observador
         AgenteLogistico agenteLogistico = new AgenteLogistico("João");
