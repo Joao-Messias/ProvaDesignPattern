@@ -7,12 +7,12 @@ import ecommerce.pagamento.PagamentoPix;
 
 public class Main {
     public static void main(String[] args) {
-        // criação do método de pagamento
+        // criação do método de pagamento (Padrão Strategy e Injeção de Dependência)
         Pagamento pagamentoPix = new PagamentoPix();
-        // instanciação do Ecommerce com o método de pagamento criado
+        // instanciação do Ecommerce com o método de pagamento criado (Padrão Singleton)
         ECommerce loja = ECommerce.getInstance(pagamentoPix);
 
-        // Adicionando o Agente Logístico como um observador
+        // Adicionando o Agente Logístico como um observador (Padrão Observer)
         AgenteLogistico agenteLogistico = new AgenteLogistico("João");
         loja.addObserver(agenteLogistico);
 
@@ -26,7 +26,7 @@ public class Main {
         loja.finalizarCompra();
 
         // Para testar o cancelamento, você pode descomentar a linha abaixo
-        loja.cancelarCompra();
+//        loja.cancelarCompra();
 
         // status da compra
         System.out.println("Status da compra: " + loja.getStatusCompra());
