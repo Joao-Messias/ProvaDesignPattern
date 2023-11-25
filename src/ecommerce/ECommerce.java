@@ -30,7 +30,8 @@ public class ECommerce {
     }
 
     public void cancelarCompra() {
-        setStatusCompra("CANCELADA", "Compra cancelada"); // Notificar os observadores
+        double valorTotal = gerenciadorDeCarrinho.calcularTotal();
+        setStatusCompra("CANCELADA", "Compra de R$ " + valorTotal + " cancelada"); // Notificar os observadores
     }
 
     public void addObserver(Observer observer) {

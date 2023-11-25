@@ -13,7 +13,7 @@ public class Main {
         ECommerce loja = new ECommerce(pagamentoPix);
 
         // Adicionando o Agente Logístico como um observador
-        AgenteLogistico agenteLogistico = new AgenteLogistico();
+        AgenteLogistico agenteLogistico = new AgenteLogistico("João");
         loja.addObserver(agenteLogistico);
 
         // adição de itens ao carrinho
