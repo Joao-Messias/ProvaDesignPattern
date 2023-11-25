@@ -25,11 +25,11 @@ public class ECommerce {
     public void finalizarCompra() {
         double valorTotal = carrinhoDeCompras.calcularTotal();
         gerenciadorDePagamento.processarPagamento(valorTotal);
-        setStatusCompra("CONFIRMADA", "Detalhes da compra"); // Notificar os observadores
+        setStatusCompra("CONFIRMADA", "Compra de R$ " + valorTotal + " confirmada"); // Notificar os observadores
     }
 
     public void cancelarCompra() {
-        setStatusCompra("CANCELADA", "Detalhes do cancelamento"); // Notificar os observadores
+        setStatusCompra("CANCELADA", "Compra de R$ " + carrinhoDeCompras.calcularTotal() + " cancelada"); // Notificar os observadores
     }
 
     public void addObserver(Observer observer) {

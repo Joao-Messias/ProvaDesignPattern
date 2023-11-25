@@ -8,4 +8,5 @@ public class AgenteLogistico implements Observer {
             System.out.println("Compra cancelada: " + detalhes);
         }
     }
+
 }
