@@ -3,14 +3,16 @@ import ecommerce.ECommerce;
 import ecommerce.item.Produto;
 import ecommerce.item.Servico;
 import ecommerce.pagamento.Pagamento;
+import ecommerce.pagamento.PagamentoCripto;
 import ecommerce.pagamento.PagamentoPix;
 
 public class Main {
     public static void main(String[] args) {
         // criação do método de pagamento (Padrão Strategy e Injeção de Dependência)
         Pagamento pagamentoPix = new PagamentoPix();
-        // instanciação do Ecommerce com o método de pagamento criado (Padrão Singleton)
-        ECommerce loja = ECommerce.getInstance(pagamentoPix);
+        Pagamento pagamentoCripto = new PagamentoCripto();
+        // instanciação do Ecommerce com o método de pagamento criado (Padrão Singleton) podendo usar tanto o pagamentoPix quanto o pagamentoCripto
+        ECommerce loja = ECommerce.getInstance(pagamentoCripto);
 
         // Adicionando o Agente Logístico como um observador (Padrão Observer)
         AgenteLogistico agenteLogistico = new AgenteLogistico("João");
